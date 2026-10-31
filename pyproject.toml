@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "obscura"
+version = "0.1.0"
+description = "OBSCURA satellite AI research challenge: multi-target atmospheric prediction"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy", "pandas", "scikit-learn", "lightgbm", "tifffile", "joblib", "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "jupyter", "matplotlib"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
